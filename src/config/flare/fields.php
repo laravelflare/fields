@@ -10,8 +10,8 @@ return [
     | This array of Field classes allows you to define all of the
     | available field types that you have available.
     |
-    | You can add your own custom attributes here, replace or even remove
-    | some of the defaults. Each attribute requires a unique key in order to 
+    | You can add your own custom field types here, replace or even remove
+    | some of the defaults. Each type requires a unique key in order to 
     | allow you to reference the class in a shorthand fashion.
     |
     */

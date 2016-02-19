@@ -3,7 +3,7 @@
 namespace LaravelFlare\Fields;
 
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
+use LaravelFlare\Flare\FlareModuleProvider as ServiceProvider;
 
 class FieldServiceProvider extends ServiceProvider
 {

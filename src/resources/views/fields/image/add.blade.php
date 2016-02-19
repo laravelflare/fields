@@ -3,27 +3,27 @@
         <div class="form-group @if ($errors->has($attribute)) has-error @endif">
             <label class="control-label" for="{{ $attribute }}">
                 {{ $attributeTitle }}
-                @if (isset($field['required'])) 
+                @if (isset($options['required'])) 
                 <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
                 @endif
-                @if(isset($field['tooltip']))
-                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $field['tooltip'] }}">?</span>
+                @if(isset($options['tooltip']))
+                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
                 @endif
             </label>
             <input id="{{ $attribute }}"
-                    class="form-control {{ $field['class'] or null }}"
+                    class="form-control {{ $options['class'] or null }}"
                     type="file"
                     name="{{ $attribute }}"
-                    accept="{{ isset($field['accept']) ? $field['accept'] : 'image/*' }}"
-                    @if (isset($field['maxlength'])) maxlength="{{ $field['maxlength'] }}" @endif
-                    @if (isset($field['disabled'])) disabled="disabled" @endif
-                    @if (isset($field['autofocus'])) autofocus="autofocus" @endif
-                    @if (isset($field['required'])) required="required" @endif
-                    @if (isset($field['multiple'])) multiple="{{ $field['multiple'] }}" @endif
+                    accept="{{ isset($options['accept']) ? $options['accept'] : 'image/*' }}"
+                    @if (isset($options['maxlength'])) maxlength="{{ $options['maxlength'] }}" @endif
+                    @if (isset($options['disabled'])) disabled="disabled" @endif
+                    @if (isset($options['autofocus'])) autofocus="autofocus" @endif
+                    @if (isset($options['required'])) required="required" @endif
+                    @if (isset($options['multiple'])) multiple="{{ $options['multiple'] }}" @endif
                 >
                     
-            @if(isset($field['help']))
-                <p class="help-block">{!! $field['help'] !!}</p>
+            @if(isset($options['help']))
+                <p class="help-block">{!! $options['help'] !!}</p>
             @endif
 
             @if ($errors->has($attribute))

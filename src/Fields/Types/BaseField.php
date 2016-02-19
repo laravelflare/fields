@@ -181,7 +181,7 @@ class BaseField
      */
     public function getFieldType()
     {
-        return title_case(isset($this->getField()) ? $this->getField() : self::FIELD_TYPE);
+        return title_case($this->getField() ? $this->getField() : self::FIELD_TYPE);
     }
 
     /*
@@ -189,9 +189,9 @@ class BaseField
      * 
      * @return string
      */
-    public function getAttributeitle()
+    public function getAttributeTitle()
     {
-        return str_replace('_', ' ', title_case($this->getField()));
+        return str_replace('_', ' ', title_case($this->getAttribute()));
     }
 
     /**

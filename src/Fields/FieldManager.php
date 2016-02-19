@@ -20,10 +20,10 @@ class FieldManager
         if ($this->typeExists($type)) {
             $fieldType = $this->resolveField($type);
 
-            return new $fieldType($field, $attribute, $value, $options);
+            return new $fieldType($type, $attribute, $value, $options);
         }
 
-        return new BaseField($field, $attribute, $value, $options);
+        return new BaseField($type, $attribute, $value, $options);
     }
 
     /**
@@ -66,7 +66,7 @@ class FieldManager
     {
         $fields = [];
 
-        foreach (\Flare::config('fields') as $type => $classname) {
+        foreach (\Flare::config('fields.types') as $type => $classname) {
             $fields = array_add(
                                     $fields,
                                     $type,

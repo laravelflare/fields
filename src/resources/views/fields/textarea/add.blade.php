@@ -3,20 +3,20 @@
         <div class="form-group @if ($errors->has($attribute)) has-error @endif">
             <label class="control-label" for="{{ $attribute }}">
                 {{ $attributeTitle }} 
-                @if (isset($field['required'])) 
+                @if (isset($options['required'])) 
                 <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
                 @endif
-                @if(isset($field['tooltip']))
-                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $field['tooltip'] }}">?</span>
+                @if(isset($options['tooltip']))
+                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
                 @endif
             </label>
             <textarea id="{{ $attribute }}"
-                        class="form-control {{ $field['class'] or null }}"
+                        class="form-control {{ $options['class'] or null }}"
                         name="{{ $attribute }}"
-                        @if (isset($field['required'])) required="required" @endif>{{ old($attribute) }}</textarea>
+                        @if (isset($options['required'])) required="required" @endif>{{ old($attribute) }}</textarea>
                         
-            @if(isset($field['help']))
-                <p class="help-block">{!! $field['help'] !!}</p>
+            @if(isset($options['help']))
+                <p class="help-block">{!! $options['help'] !!}</p>
             @endif
             
             @if ($errors->has($attribute))

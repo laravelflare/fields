@@ -3,22 +3,22 @@
         <div class="form-group @if ($errors->has($attribute)) has-error @endif">
             <label class="control-label" for="{{ $attribute }}">
                 {{ $attributeTitle }}
-                @if (isset($field['required'])) 
+                @if (isset($options['required'])) 
                 <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
                 @endif
-                @if(isset($field['tooltip']))
-                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $field['tooltip'] }}">?</span>
+                @if(isset($options['tooltip']))
+                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
                 @endif
             </label>
 
             <div class="col-sm-12">            
-                @if(isset($options) && count($options) > 0)
+                @if(isset($options['options']) && count($options['options']) > 0)
                     @foreach ($options as $value => $option)
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p>
                                 <input type="checkbox"
-                                        value="{{ ($value === 0 && count($options) === 1) ? 1 : $value }}"
-                                        name="{{ $attribute }}{{ (count($options) > 1 ? '[]' : '') }}"
+                                        value="{{ ($value === 0 && count($options['options']) === 1) ? 1 : $value }}"
+                                        name="{{ $attribute }}{{ (count($options['options']) > 1 ? '[]' : '') }}"
                                         @if (
                                                 (is_scalar($oldValue) && $oldValue == $value)
                                             ||
@@ -31,9 +31,9 @@
                         </div>
                     @endforeach
 
-                    @if(isset($field['help']))
+                    @if(isset($options['help']))
                     <div class="col-sm-12">
-                        <p class="help-block">{!! $field['help'] !!}</p>
+                        <p class="help-block">{!! $options['help'] !!}</p>
                     </div>
                     @endif
                 @else 
