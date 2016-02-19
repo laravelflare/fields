@@ -17,9 +17,6 @@
             "homepage": "https://github.com/AdenFraser"
         }
     ],
-    "require": {
-        "laravelflare/flare": "dev-master"
-    },
     "require-dev": {
         "mockery/mockery": "~0.9.1",
         "phpunit/phpunit": "~4.0",
