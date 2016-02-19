@@ -12,7 +12,7 @@
             </label>
             <input id="{{ $attribute }}"
                     class="form-control {{ $options['class'] or null }}"
-                    type="{{ $options['type'] or 'text' }}"
+                    type="{{ $field or 'text' }}"
                     name="{{ $attribute }}"
                     @if (isset($options['maxlength'])) maxlength="{{ $options['maxlength'] }}" @endif
                     @if (isset($options['disabled'])) disabled="disabled" @endif
@@ -37,7 +37,7 @@
             @endif
         </div>
 
-        @if(isset($options['type']) && $options['type'] == 'password' && isset($options['confirm']) && $options['confirm'])
+        @if(isset($field) && $field == 'password' && isset($options['confirm']) && $options['confirm'])
             <div class="form-group @if ($errors->has($attribute)) has-error @endif">
                 <label class="control-label" for="{{ $attribute }}">
                     Confirm {{ $attributeTitle }}
@@ -50,7 +50,7 @@
                 </label>
                 <input id="{{ $attribute }}_confirmation"
                         class="form-control {{ $options['class'] or null }}"
-                        type="{{ $options['type'] or 'text' }}"
+                        type="{{ $field or 'text' }}"
                         name="{{ $attribute }}_confirmation"
                         @if (isset($options['maxlength'])) maxlength="{{ $options['maxlength'] }}" @endif
                         @if (isset($options['disabled'])) disabled="disabled" @endif
