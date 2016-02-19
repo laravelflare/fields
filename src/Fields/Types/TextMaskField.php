@@ -2,15 +2,15 @@
 
 namespace LaravelFlare\Fields\Types;
 
-class TimeField extends BaseField
+class TextMaskField extends BaseField
 {
     /**
      * View Path for this Field Type
-     *     Defaults to flare::afields which outputs
+     *     Defaults to flare::fields which outputs
      *     a warning callout notifying the user that the field
      *     view does not yet exist.
      *     
      * @var string
      */
-    protected $viewpath = 'flare::afields.time';
+    protected $viewpath = 'flare::fields.textmask';
 }

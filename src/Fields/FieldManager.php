@@ -2,92 +2,92 @@
 
 namespace LaravelFlare\Fields;
 
-use LaravelFlare\Fields\Types\BaseAttribute;
+use LaravelFlare\Fields\Types\BaseField;
 
-class AttributeManager
+class FieldManager
 {
     /**
-     * Create a new Attribute Instance 
+     * Create a new Field Instance 
      * 
      * @param string $type
      * @param string $action
      * @param string $attribute
      * @param string $field
-     * @param string $modelManager
+     * @param array $options
      */
-    public function createAttribute($type, $attribute, $field, $value = null, $modelManager = null)
+    public function create($type, $attribute, $value = null, $options = [])
     {
-        if ($this->attributeTypeExists($type)) {
+        if ($this->typeExists($type)) {
             $fieldType = $this->resolveAttributeClass($type);
 
-            return new $fieldType($field, $attribute, $value, $modelManager);
+            return new $fieldType($field, $attribute, $value, $options);
         }
 
-        return new BaseAttribute($field, $attribute, $value, $modelManager);
+        return new BaseField($field, $attribute, $value, $options);
     }
 
     /**
-     * Render Attribute.
+     * Render a Field.
      *
-     * @param string $action
+     * @param string $type
      * @param string $attribute
      * @param string $field
-     * @param string $modelManager
+     * @param string $options
      *
      * @return \Illuminate\Http\Response
      */
-    public function renderAttribute($action, $attribute, $field, $value = null, $modelManager = null)
+    public function render($action, $type, $attribute, $value = null, $options = [])
     {
         if (!isset($field['type'])) {
-            throw new \Exception('Attribute Field Type cannot be empty or undefined.');
+            throw new \Exception('Field Type cannot be empty or undefined.');
         }
 
-        return call_user_func_array([$this->createAttribute($field['type'], $action, $attribute, $field, $value, $modelManager), camel_case('render_'.$action)], []);
+        return call_user_func_array([$this->create($type, $attribute, $value, $options), camel_case('render_'.$action)], []);
     }
 
     /**
-     * Determines if an AttributeType class exists or not.
+     * Determines if a Field type class exists or not.
      * 
      * @param string $type
      * 
      * @return bool
      */
-    public function attributeTypeExists($type)
+    public function typeExists($type)
     {
-        return $this->resolveAttributeClass($type) ? true : false;
+        return $this->resolveField($type) ? true : false;
     }
 
     /**
-     * Returns an array of all of the Available Attribute Types.
+     * Returns an array of all of the available Field Types.
      * 
      * @return array
      */
-    protected function availableAttributes()
+    public function availableTypes()
     {
-        $availableAttributes = [];
+        $fields = [];
 
-        foreach (\Flare::config('attributes') as $attributeType => $attributeFullClassname) {
-            $availableAttributes = array_add(
-                                            $availableAttributes,
-                                            $attributeType,
-                                            $attributeFullClassname
-                                        );
+        foreach (\Flare::config('fields') as $type => $classname) {
+            $fields = array_add(
+                                    $fields,
+                                    $type,
+                                    $classname
+                                );
         }
 
-        return $availableAttributes;
+        return $fields;
     }
 
     /**
-     * Resolves the Class of an Attribute and returns it as a string.
+     * Resolves the Class of a Field and returns it as a string.
      * 
      * @param string $type
      * 
      * @return string
      */
-    protected function resolveAttributeClass($type)
+    private function resolveField($type)
     {
-        if (array_key_exists($type, $attributes = $this->availableAttributes())) {
-            return $this->availableAttributes()[$type];
+        if (array_key_exists($type, $attributes = $this->availableTypes())) {
+            return $this->availableTypes()[$type];
         }
 
         if (class_exists($type)) {

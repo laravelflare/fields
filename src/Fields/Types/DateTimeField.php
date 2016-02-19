@@ -2,15 +2,15 @@
 
 namespace LaravelFlare\Fields\Types;
 
-class PasswordField extends BaseField
+class DateTimeField extends BaseField
 {
     /**
      * View Path for this Field Type
-     *     Defaults to flare::afields which outputs
+     *     Defaults to flare::fields which outputs
      *     a warning callout notifying the user that the field
      *     view does not yet exist.
      *     
      * @var string
      */
-    protected $viewpath = 'flare::afields.text';
+    protected $viewpath = 'flare::fields.datetime';
 }
