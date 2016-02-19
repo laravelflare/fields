@@ -1,0 +1,38 @@
+{
+    "name": "laravelflare/fields",
+    "description": "",
+    "keywords": [
+        "Laravel", "Flare"
+    ],
+    "homepage": "https://github.com/laravelflare/fields",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laravel Flare",
+            "homepage": "https://github.com/laravelflare"
+        },
+        {
+            "name": "Aden Fraser",
+            "email": "aden@jacobbailey.com",
+            "homepage": "https://github.com/AdenFraser"
+        }
+    ],
+    "require": {
+        "laravelflare/flare": "dev-master"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9.1",
+        "phpunit/phpunit": "~4.0",
+        "orchestra/testbench": "~3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelFlare\\Fields\\": "src/Fields"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFlare\\Fields\\Tests\\": "tests/"
+        }
+    }
+}
