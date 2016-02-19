@@ -85,10 +85,9 @@
         <script src="{{ asset('vendor/flare/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script> 
 
         <script>
-
-        $(function () {
-            $("[data-inputmask]").inputmask();
-        });
+            $(function () {
+                $("[data-inputmask]").inputmask();
+            });
         </script>
     @append
 @endif
