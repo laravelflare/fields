@@ -21,13 +21,21 @@ class FieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->registerFlareHelpers();
+    }
+
+    /**
+     * Register Flare Helper for Pages.
+     */
+    private function registerFlareHelpers()
+    {
+        $this->flare->registerHelper('fields', \LaravelFlare\Fields\FieldManager::class);
     }
 
     /**
      * Publishes the Flare Assets to the appropriate directories.
      */
-    protected function publishAssets()
+    private function publishAssets()
     {
         $assets = [];
 
@@ -41,7 +49,7 @@ class FieldServiceProvider extends ServiceProvider
     /**
      * Publishes the Flare Fields Config File.
      */
-    protected function publishConfig()
+    private function publishConfig()
     {
         $this->publishes([
             $this->basePath('config/flare/fields.php') => config_path('flare/fields.php'),
@@ -52,7 +60,7 @@ class FieldServiceProvider extends ServiceProvider
      * Publishes the Flare Field Views and defines the location
      * they should be looked for in the application.
      */
-    protected function publishViews()
+    private function publishViews()
     {
         $this->loadViewsFrom($this->basePath('resources/views'), 'flare');
         $this->publishes([
