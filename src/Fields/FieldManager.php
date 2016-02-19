@@ -7,13 +7,13 @@ use LaravelFlare\Fields\Types\BaseField;
 class FieldManager
 {
     /**
-     * Create a new Field Instance 
+     * Create a new Field Instance.
      * 
      * @param string $type
      * @param string $action
      * @param string $attribute
      * @param string $field
-     * @param array $options
+     * @param array  $options
      */
     public function create($type, $attribute, $value = null, $options = [])
     {

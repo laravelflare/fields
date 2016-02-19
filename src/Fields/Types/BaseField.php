@@ -3,7 +3,6 @@
 namespace LaravelFlare\Fields\Types;
 
 use Illuminate\Support\HtmlString;
-use LaravelFlare\Flare\Admin\Models\ModelAdmin;
 
 class BaseField
 {
@@ -67,9 +66,9 @@ class BaseField
     }
 
     /**
-     * Returns the View to Render as an HTMLString
+     * Returns the View to Render as an HTMLString.
      * 
-     * @param  boolean $view 
+     * @param bool $view
      * 
      * @return /Illuminate/Support/String
      */
@@ -147,7 +146,7 @@ class BaseField
     }
 
     /**
-     * Returns the current value
+     * Returns the current value.
      * 
      * @return mixed
      */
@@ -157,7 +156,7 @@ class BaseField
     }
 
     /**
-     * Returns the old or current value
+     * Returns the old or current value.
      * 
      * @return mixed
      */
@@ -195,7 +194,7 @@ class BaseField
     }
 
     /**
-     * Returns all of the accessible data for the Attirbute View
+     * Returns all of the accessible data for the Attirbute View.
      *
      * @return array
      */
