@@ -13,7 +13,7 @@
 
             <div class="col-sm-12">            
                 @if(isset($options['options']) && count($options['options']) > 0)
-                    @foreach ($options as $value => $option)
+                    @foreach ($options['options'] as $value => $option)
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p>
                                 <input type="checkbox"

@@ -4,10 +4,10 @@
             <label class="control-label" for="{{ $attribute }}">
                 {{ $attributeTitle }}
                 @if (isset($options['required'])) 
-                <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
+                    <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
                 @endif
                 @if(isset($options['tooltip']))
-                <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
+                    <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
                 @endif
             </label>
             
@@ -17,8 +17,8 @@
                         id="{{ $attribute }}"
                         @if (isset($options['required'])) required="required" @endif>
                     <option></option>
-                    @foreach ($options as $value => $option)
-                    <option value="{{ $value }}">{{ $option }}</option>
+                    @foreach ($options['options'] as $value => $option)
+                        <option value="{{ $value }}">{{ $option }}</option>
                     @endforeach
                 </select>
 
@@ -28,7 +28,7 @@
             @else
                 <div class="callout callout-warning">
                     <strong>
-                    No options available for {{ $attributeTitle }}!
+                        No options available for {{ $attributeTitle }}!
                     </strong>
                 </div>
             @endif
