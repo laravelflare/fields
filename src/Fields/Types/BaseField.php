@@ -58,7 +58,7 @@ class BaseField
      * @param string $value
      * @param string $modelManager
      */
-    public function __construct($field, $attribute, $value, $options)
+    public function __construct($field, $attribute, $value, $options = [])
     {
         $this->field = $field;
         $this->attribute = $attribute;
