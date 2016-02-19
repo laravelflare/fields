@@ -86,7 +86,7 @@ class FieldManager
      */
     private function resolveField($type)
     {
-        if (array_key_exists($type, $attributes = $this->availableTypes())) {
+        if (array_key_exists($type, $this->availableTypes())) {
             return $this->availableTypes()[$type];
         }
 
