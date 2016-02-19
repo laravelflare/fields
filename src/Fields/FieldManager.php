@@ -18,7 +18,7 @@ class FieldManager
     public function create($type, $attribute, $value = null, $options = [])
     {
         if ($this->typeExists($type)) {
-            $fieldType = $this->resolveAttributeClass($type);
+            $fieldType = $this->resolveField($type);
 
             return new $fieldType($field, $attribute, $value, $options);
         }
