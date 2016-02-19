@@ -15,7 +15,7 @@
                 <strong>
                     Existing:
                 </strong>
-                {{ $modelManager->getAttribute($attribute)  }}
+                {{ $value  }}
             </p>
             
             <input id="{{ $attribute }}"

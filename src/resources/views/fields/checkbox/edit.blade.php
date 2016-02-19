@@ -12,13 +12,13 @@
             </label>
 
             <div class="col-sm-12">            
-                @if(isset($field['options']) && count($field['options']) > 0)
-                    @foreach ($field['options'] as $value => $option)
+                @if(isset($options) && count($options) > 0)
+                    @foreach ($options as $value => $option)
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p>
                                 <input type="checkbox"
-                                        value="{{ ($value === 0 && count($field['options']) === 1) ? 1 : $value }}"
-                                        name="{{ $attribute }}{{ (count($field['options']) > 1 ? '[]' : '') }}"
+                                        value="{{ ($value === 0 && count($options) === 1) ? 1 : $value }}"
+                                        name="{{ $attribute }}{{ (count($options) > 1 ? '[]' : '') }}"
                                         @if (
                                                 (is_scalar($oldValue) && $oldValue == $value)
                                             ||

@@ -3,6 +3,6 @@
         {{ $attributeTitle }}
     </dt>
     <dd>
-        {{ $modelManager->getAttribute($attribute) }}
+        {{ $value }}
     </dd>
 </dl>

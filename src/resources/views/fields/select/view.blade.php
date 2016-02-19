@@ -3,17 +3,17 @@
         {{ $attributeTitle }}
     </dt>
     <dd>
-        @if ($model->getAttribute($attribute))
-            @if (is_scalar($model->getAttribute($attribute)))
-                @if (array_key_exists($model->getAttribute($attribute), $field['options']))
-                    {{ $field['options'][$model->getAttribute($attribute)] }}
+        @if ($value)
+            @if (is_scalar($value))
+                @if (array_key_exists($value, $options))
+                    {{ $options[$value] }}
                 @else
-                    {{ $model->getAttribute($attribute) }}
+                    {{ $value }}
                 @endif
             @else 
-                @foreach ($model->getAttribute($attribute) as $key => $value)
-                    @if (array_key_exists($model->getAttribute($attribute), $field['options']))
-                        {{ $field['options'][$model->getAttribute($attribute)] }} <br>
+                @foreach ($value as $key => $value)
+                    @if (array_key_exists($value, $options))
+                        {{ $options[$value] }} <br>
                     @else
                         {{ $value }} <br>
                     @endif

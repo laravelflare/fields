@@ -184,12 +184,12 @@ class BaseField
         return title_case(isset($this->getField()) ? $this->getField() : self::FIELD_TYPE);
     }
 
-    /**
+    /*
      * Acessor for Field Title converted to Title Case with Spaces.
      * 
      * @return string
      */
-    public function getFieldTitle()
+    public function getAttributeitle()
     {
         return str_replace('_', ' ', title_case($this->getField()));
     }
@@ -203,7 +203,9 @@ class BaseField
     {
         return [
                 'field' => $this->getField(),
+                'fieldType' => $this->getFieldType(),
                 'attribute' => $this->getAttribute(),
+                'attributeTitle' => $this->getAttributeTitle(),
                 'value' => $this->getValue(),
                 'oldValue' => $this->getOldValue(),
                 'options' => $this->getOptions(),

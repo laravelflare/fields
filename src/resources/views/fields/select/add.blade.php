@@ -11,13 +11,13 @@
                 @endif
             </label>
             
-            @if(isset($field['options']) && count($field['options']) > 0)
+            @if(isset($options) && count($options) > 0)
                 <select class="form-control"
                         name="{{ $attribute }}"
                         id="{{ $attribute }}"
                         @if (isset($field['required'])) required="required" @endif>
                     <option></option>
-                    @foreach ($field['options'] as $value => $option)
+                    @foreach ($options as $value => $option)
                     <option value="{{ $value }}">{{ $option }}</option>
                     @endforeach
                 </select>

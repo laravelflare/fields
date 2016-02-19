@@ -3,11 +3,11 @@
         {{ $attributeTitle }}
     </dt>
     <dd>
-        @if (is_scalar($modelManager->getAttribute($attribute)) || is_null($modelManager->getAttribute($attribute)))
-            {{ $modelManager->getAttribute($attribute) }}
+        @if (is_scalar($value) || is_null($value))
+            {{ $value }}
         @else 
-            @foreach ($modelManager->getAttribute($attribute) as $key => $value)
-            {{ $value }} <br>
+            @foreach ($value as $key => $value)
+                {{ $value }} <br>
             @endforeach
         @endif
     </dd>
