@@ -30,8 +30,8 @@
 
 @section('enqueued-js')
     <script>
-    $(function () {
-        $("#{{ $attribute }}").wysihtml5();
-    });
+        $(function () {
+            $("#{{ $attribute }}").wysihtml5();
+        });
     </script>
 @append 
