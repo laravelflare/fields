@@ -38,7 +38,7 @@ class FieldManager
      */
     public function render($action, $type, $attribute, $value = null, $options = [])
     {
-        if (!isset($field['type'])) {
+        if (!isset($type)) {
             throw new \Exception('Field Type cannot be empty or undefined.');
         }
 

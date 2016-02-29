@@ -190,7 +190,7 @@ class BaseField
      */
     public function getAttributeTitle()
     {
-        return str_replace('_', ' ', title_case($this->getAttribute()));
+        return str_replace('_', ' ', isset($this->options['title']) ? $this->options['title'] : title_case($this->getAttribute()));
     }
 
     /**
