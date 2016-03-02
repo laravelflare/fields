@@ -10,7 +10,7 @@
                     <span title="" data-placement="right" data-toggle="tooltip" class="badge bg-black" data-original-title="{{ $options['tooltip'] }}">?</span>
                 @endif
             </label>
-            
+
             @if(isset($options['options']) && count($options['options']) > 0)
                 <select class="form-control"
                         name="{{ $attribute }}"

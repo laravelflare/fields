@@ -11,12 +11,14 @@
                 @endif
             </label>
             
-            <p>
-                <strong>
-                    Existing:
-                </strong>
-                {{ $value  }}
-            </p>
+            @if ($value)
+                <p>
+                    <strong>
+                        Existing:
+                    </strong>
+                    {{ $value }}
+                </p>
+            @endif
             
             <input id="{{ $attribute }}"
                     class="form-control {{ $options['class'] or null }}"
