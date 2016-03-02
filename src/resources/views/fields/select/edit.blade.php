@@ -18,7 +18,7 @@
                         @if (isset($options['required'])) required="required" @endif>
                     <option></option>
                     @foreach ($options['options'] as $optionValue => $option)
-                        <option value="{{ $value }}"
+                        <option value="{{ $optionValue }}"
                                         @if ($optionValue == $value) selected="selected" @endif
                                     >{{ $option }}</option>
                     @endforeach
