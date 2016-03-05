@@ -11,12 +11,20 @@
                 @endif
             </label>
             
-            <p>
-                <strong>
-                    Existing:
-                </strong>
-                {{ $value  }}
-            </p>
+            @if ($value)
+                <p>
+                    <strong>
+                        Existing:
+                    </strong>
+                    @if (strpos($value, 'http://') === 0 || strpos($value, 'https://') === 0)
+                        <a href="{{ $value  }}">
+                            <img src="{{ $value }}" class="img-responsive">
+                        </a>
+                    @else
+                        {{ $value }}
+                    @endif
+                </p>
+            @endif
 
             <input id="{{ $attribute }}"
                     class="form-control {{ $options['class'] or null }}"

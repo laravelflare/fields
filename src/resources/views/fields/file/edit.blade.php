@@ -16,7 +16,13 @@
                     <strong>
                         Existing:
                     </strong>
-                    {{ $value }}
+                    @if (strpos($value, 'http://') === 0 || strpos($value, 'https://') === 0)
+                        <a href="{{ $value  }}">
+                            {{ $value }}
+                        </a>
+                    @else
+                        {{ $value }}
+                    @endif
                 </p>
             @endif
             
