@@ -13,7 +13,7 @@
 
             @if(isset($options['options']) && count($options['options']) > 0)
                 <select class="form-control"
-                        name="{{ $attribute }}"
+                        name="{{ $attribute }}{{ isset($options['multiple']) ? '[]' : '' }}"
                         id="{{ $attribute }}"
                         @if (isset($options['multiple'])) multiple="multiple" @endif
                         @if (isset($options['required'])) required="required" @endif>
