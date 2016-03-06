@@ -16,7 +16,8 @@
                         name="{{ $attribute }}{{ isset($options['multiple']) ? '[]' : '' }}"
                         id="{{ $attribute }}"
                         @if (isset($options['multiple'])) multiple="multiple" @endif
-                        @if (isset($options['required'])) required="required" @endif>
+                        @if (isset($options['required'])) required="required" @endif
+                    >
                     <option></option>
                     @foreach ($options['options'] as $value => $option)
                         <option value="{{ $value }}">{{ $option }}</option>
