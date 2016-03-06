@@ -15,11 +15,16 @@
                 <select class="form-control"
                         name="{{ $attribute }}"
                         id="{{ $attribute }}"
+                        @if (isset($options['multiple'])) multiple="multiple" @endif
                         @if (isset($options['required'])) required="required" @endif>
                     <option></option>
                     @foreach ($options['options'] as $optionValue => $option)
                         <option value="{{ $optionValue }}"
-                                        @if ($optionValue == $value) selected="selected" @endif
+                                        @if (
+                                                (is_scalar($value) && $value == $optionValue)
+                                            ||
+                                                (is_array($value) && array_key_exists($optionValue, $value))
+                                            ) selected="selected" @endif
                                     >{{ $option }}</option>
                     @endforeach
                 </select>

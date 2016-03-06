@@ -15,6 +15,7 @@
                 <select class="form-control"
                         name="{{ $attribute }}"
                         id="{{ $attribute }}"
+                        @if (isset($options['multiple'])) multiple="multiple" @endif
                         @if (isset($options['required'])) required="required" @endif>
                     <option></option>
                     @foreach ($options['options'] as $value => $option)
