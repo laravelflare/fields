@@ -18,7 +18,9 @@
                         @if (isset($options['multiple'])) multiple="multiple" @endif
                         @if (isset($options['required'])) required="required" @endif
                     >
-                    <option></option>
+                    @if(!isset($options['required']))
+                        <option></option>
+                    @endif
                     @foreach ($options['options'] as $value => $option)
                         <option value="{{ $value }}">{{ $option }}</option>
                     @endforeach
