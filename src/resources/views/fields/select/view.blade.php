@@ -12,10 +12,14 @@
                 @endif
             @else 
                 @foreach ($value as $key => $value)
-                    @if (array_key_exists($value, $options['options']))
-                        {{ $options['options'][$value] }} <br>
+                    @if (!is_scalar($value) && array_key_exists($value->{$value->getKeyName()}, $options['options'])) 
+                        {{ $options['options'][$value->{$value->getKeyName()}] }} <br>
                     @else
-                        {{ $value }} <br>
+                        @if (array_key_exists($value, $options['options']))
+                            {{ $options['options'][$value] }} <br>
+                        @else
+                            {{ $value }} <br>
+                        @endif
                     @endif
                 @endforeach
             @endif
