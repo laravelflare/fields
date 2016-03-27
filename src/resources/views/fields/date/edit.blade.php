@@ -39,7 +39,8 @@
 @section('enqueued-js')
     <script>
         $('#{{ $attribute }}').datepicker({
-          autoclose: true
+            format: {!! isset($options['format']) ? "'".$options['format']."'" : "'yyyy-mm-dd'" !!},
+            autoclose: true
         });
     </script>
 @append 
