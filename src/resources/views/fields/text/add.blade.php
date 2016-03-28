@@ -2,6 +2,9 @@
     <div class="col-sm-6">
         <div class="form-group @if ($errors->has($attribute)) has-error @endif">
             <label class="control-label" for="{{ $attribute }}">
+                @if ($errors->has($attribute))
+                    <i class="fa fa-times-circle-o"></i>
+                @endif
                 {{ $attributeTitle }}
                 @if (isset($options['required'])) 
                     <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>
@@ -32,7 +35,7 @@
 
             @if ($errors->has($attribute))
                 <p class="help-block">
-                    <strong>{{ $errors->first($attribute) }}</strong>
+                    {{ $errors->first($attribute) }}
                 </p>
             @endif        
         </div>
@@ -70,7 +73,7 @@
 
                 @if ($errors->has($attribute))
                     <p class="help-block">
-                        <strong>{{ $errors->first($attribute) }}</strong>
+                        {{ $errors->first($attribute) }}
                     </p>
                 @endif
             </div>
