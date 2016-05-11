@@ -21,7 +21,7 @@
                         id="{{ $attribute }}"
                         class="form-control pull-right {{ $options['class'] or null }}"
                         name="{{ $attribute }}"
-                        value="{{ old($attribute) }}"
+                        value="{{ $oldValue }}"
                         @if (isset($options['required'])) required="required" @endif
                     >
             </div>

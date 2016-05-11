@@ -27,7 +27,7 @@
                     @if (isset($options['data-inputmask'])) data-inputmask="{!! $options['data-inputmask'] !!}" @endif
                     @if (isset($options['required'])) required="required" @endif
                     @if (isset($options['placeholder'])) placeholder="{{ $options['placeholder'] }}" @endif
-                    value="">
+                    value="{{ $oldValue }}">
                     
             @if(isset($options['help']))
                 <p class="help-block">{!! $options['help'] !!}</p>

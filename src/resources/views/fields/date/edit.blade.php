@@ -32,7 +32,7 @@
             
             @if ($errors->has($attribute))
                 <p class="help-block">
-                   {{ $errors->first($attribute) }}
+                    {{ $errors->first($attribute) }}
                 </p>
             @endif
         </div>

@@ -16,7 +16,7 @@
             <textarea id="{{ $attribute }}"
                         class="form-control {{ $options['class'] or null }}"
                         name="{{ $attribute }}"
-                        @if (isset($options['required'])) required="required" @endif>{{ old($attribute) }}</textarea>
+                        @if (isset($options['required'])) required="required" @endif>{{ $oldValue }}</textarea>
                         
             @if(isset($options['help']))
                 <p class="help-block">{!! $options['help'] !!}</p>

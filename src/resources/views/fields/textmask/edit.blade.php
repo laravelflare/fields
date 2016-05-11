@@ -24,7 +24,7 @@
                         data-mask="" 
                         data-inputmask="'alias': '{{ (isset($options['inputmask']) ? $options['inputmask'] : '') }}'"
                         class="form-control focus.inputmask"
-                        value="{{ oldValue ) }}">
+                        value="{{ $oldValue }}">
             </div>
             
             @if(isset($options['help']))
