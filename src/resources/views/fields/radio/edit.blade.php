@@ -27,6 +27,8 @@
                                                 (is_scalar($oldValue) && $oldValue == $value)
                                             ||
                                                 (is_array($oldValue) && array_key_exists($value, $oldValue))
+                                            ||
+                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $oldValue = $value->getKey())
                                             )
                                             checked="checked" @endif
                                         >

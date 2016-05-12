@@ -30,6 +30,8 @@
                                                 (is_scalar($value) && $value == $optionValue)
                                             ||
                                                 (is_array($value) && array_key_exists($optionValue, $value))
+                                            ||
+                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue = $value->getKey())
                                             ) selected="selected" @endif
                                     >{{ $option }}</option>
                     @endforeach
