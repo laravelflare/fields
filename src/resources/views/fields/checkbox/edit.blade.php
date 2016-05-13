@@ -27,6 +27,8 @@
                                             ||
                                                 (is_array($oldValue) && array_key_exists($value, $oldValue))
                                             ||
+                                                (is_array($oldValue) && in_array($value, $oldValue))
+                                            ||
                                                 ($value instanceof \Illuminate\Database\Eloquent\Model && $oldValue = $value->getKey())
                                             )
                                             checked="checked" @endif
