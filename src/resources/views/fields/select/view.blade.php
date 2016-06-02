@@ -10,7 +10,7 @@
                 @else
                     {{ $value }}
                 @endif
-            @else 
+            @elseif (is_array($value))
                 @foreach ($value as $key => $value)
                     @if (!is_scalar($value) && array_key_exists($value->{$value->getKeyName()}, $options['options'])) 
                         {{ $options['options'][$value->{$value->getKeyName()}] }} <br>
@@ -22,6 +22,8 @@
                         @endif
                     @endif
                 @endforeach
+            @elseif ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue = $value->getKey())
+                {{ $options['options'][$optionValue] }}
             @endif
         @endif
     </dd>
