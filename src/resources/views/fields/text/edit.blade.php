@@ -80,3 +80,17 @@
         @endif
     </div>
 </div>
+
+@if(isset($options['data-inputmask']))
+    @section('enqueued-js')
+        <script src="{{ asset('vendor/flare/plugins/input-mask/jquery.inputmask.js') }}"></script>
+        <script src="{{ asset('vendor/flare/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+        <script src="{{ asset('vendor/flare/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script> 
+
+        <script>
+            $(function () {
+                $("[data-inputmask]").inputmask();
+            });
+        </script>
+    @append
+@endif
