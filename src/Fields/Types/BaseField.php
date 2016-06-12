@@ -2,7 +2,7 @@
 
 namespace LaravelFlare\Fields\Types;
 
-use Illuminate\Support\HtmlString;
+use Exception;
 
 class BaseField
 {
@@ -66,19 +66,19 @@ class BaseField
     }
 
     /**
-     * Returns the View to Render as an HTMLString.
+     * Returns the Rendered View.
      * 
      * @param bool $view
      * 
-     * @return /Illuminate/Support/String
+     * @return \Illuminate\View\View
      */
     public function render($view = false)
     {
         if (method_exists($this, $method = 'render'.ucfirst($view))) {
-            return new HtmlString(
-                call_user_func_array([$this, $method], [])
-            );
+            return call_user_func_array([$this, $method], []);
         }
+
+        throw new Exception("Render method `$view` for ".$this->getFieldType()." Field does not exist.");
     }
 
     /**
@@ -174,7 +174,7 @@ class BaseField
     }
 
     /**
-     * Acessor for Field Type converted to Title Case.
+     * Accessor for Field Type converted to Title Case.
      * 
      * @return string
      */

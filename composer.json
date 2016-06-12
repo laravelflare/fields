@@ -20,7 +20,8 @@
     "require-dev": {
         "mockery/mockery": "~0.9.1",
         "phpunit/phpunit": "~4.0",
-        "orchestra/testbench": "~3.1"
+        "orchestra/testbench": "~3.0",
+        "laravelflare/flare": "^0.9.14"
     },
     "autoload": {
         "psr-4": {
