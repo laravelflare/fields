@@ -4,7 +4,7 @@ use LaravelFlare\Fields\FieldManager;
 use LaravelFlare\Fields\Types\PasswordField;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 
-class PassworodFieldTest extends BaseTest
+class PasswordFieldTest extends BaseTest
 {
     protected $fieldManager;
 
