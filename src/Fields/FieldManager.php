@@ -2,10 +2,28 @@
 
 namespace LaravelFlare\Fields;
 
+use LaravelFlare\Flare\Flare;
 use LaravelFlare\Fields\Types\BaseField;
 
 class FieldManager
 {
+    /**
+     * Flare
+     * 
+     * @var Flare
+     */
+    protected $flare;
+
+    /**
+     * __construct 
+     * 
+     * @param Flare $flare
+     */
+    public function __construct(Flare $flare)
+    {
+        $this->flare = $flare;
+    }
+
     /**
      * Create a new Field Instance.
      * 
@@ -66,12 +84,8 @@ class FieldManager
     {
         $fields = [];
 
-        foreach (\Flare::config('fields.types') as $type => $classname) {
-            $fields = array_add(
-                                    $fields,
-                                    $type,
-                                    $classname
-                                );
+        foreach ($this->flare->config('fields.types') as $type => $classname) {
+            $fields = array_add($fields, $type, $classname);
         }
 
         return $fields;
