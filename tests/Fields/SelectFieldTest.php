@@ -1,6 +1,6 @@
 <?php
 
-class SelectFieldTest extends PHPUnit_Framework_TestCase
+class SelectFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

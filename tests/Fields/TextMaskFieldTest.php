@@ -1,6 +1,6 @@
 <?php
 
-class TextMaskFieldTest extends PHPUnit_Framework_TestCase
+class TextMaskFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

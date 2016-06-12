@@ -1,6 +1,6 @@
 <?php
 
-class WysiwygFieldTest extends PHPUnit_Framework_TestCase
+class WysiwygFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

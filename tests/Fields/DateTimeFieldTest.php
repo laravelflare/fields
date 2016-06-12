@@ -1,6 +1,6 @@
 <?php
 
-class DateTimeFieldTest extends PHPUnit_Framework_TestCase
+class DateTimeFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class TextareaFieldTest extends PHPUnit_Framework_TestCase
+class TextareaFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class TimeFieldTest extends PHPUnit_Framework_TestCase
+class TimeFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

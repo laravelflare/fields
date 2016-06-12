@@ -1,6 +1,6 @@
 <?php
 
-class ImageFieldTest extends PHPUnit_Framework_TestCase
+class ImageFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

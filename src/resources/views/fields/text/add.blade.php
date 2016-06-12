@@ -20,7 +20,7 @@
                     @if (isset($options['maxlength'])) maxlength="{{ $options['maxlength'] }}" @endif
                     @if (isset($options['disabled'])) disabled="disabled" @endif
                     @if (isset($options['readonly'])) readonly="readonly" @endif
-                    @if (isset($options['autocomplete'])) autocomplete="{{ ($options['autocomplete'] ? 'on' : 'off') }}" @endif
+                    @if (isset($options['autocomplete'])) autocomplete="{{ $options['autocomplete'] ? 'on' : 'off' }}" @endif
                     @if (isset($options['autofocus'])) autofocus="autofocus" @endif
                     @if (isset($options['pattern'])) pattern="{{ $options['pattern'] }}" @endif
                     @if (isset($options['data-inputmask'])) data-mask="" @endif
@@ -40,9 +40,9 @@
             @endif        
         </div>
         
-        @if(isset($field) && $field == 'password' && isset($options['confirmed']) && $options['confirmed'])
+        @if(isset($options['confirmed']) && $options['confirmed'])
             <div class="form-group @if ($errors->has($attribute)) has-error @endif">
-                <label class="control-label" for="{{ $attribute }}">
+                <label class="control-label" for="{{ $attribute }}_confirmation">
                     Confirm {{ $attributeTitle }}
                     @if (isset($options['required'])) 
                         <span title="" data-placement="right" data-toggle="tooltip" data-original-title="This field is required">*</span>

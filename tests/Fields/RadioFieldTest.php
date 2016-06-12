@@ -1,6 +1,6 @@
 <?php
 
-class RadioFieldTest extends PHPUnit_Framework_TestCase
+class RadioFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

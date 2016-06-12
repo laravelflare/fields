@@ -3,6 +3,7 @@
 namespace LaravelFlare\Fields\Types;
 
 use Exception;
+use Illuminate\Support\HtmlString;
 
 class BaseField
 {
@@ -75,7 +76,7 @@ class BaseField
     public function render($view = false)
     {
         if (method_exists($this, $method = 'render'.ucfirst($view))) {
-            return call_user_func_array([$this, $method], []);
+            return new HtmlString(call_user_func_array([$this, $method], []));
         }
 
         throw new Exception("Render method `$view` for ".$this->getFieldType()." Field does not exist.");

@@ -1,6 +1,6 @@
 <?php
 
-class EmailFieldTest extends PHPUnit_Framework_TestCase
+class EmailFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

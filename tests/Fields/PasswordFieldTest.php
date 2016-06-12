@@ -1,6 +1,6 @@
 <?php
 
-class PasswordFieldTest extends PHPUnit_Framework_TestCase
+class PasswordFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class CheckboxFieldTest extends PHPUnit_Framework_TestCase
+class CheckboxFieldTest extends BaseTest
 {
 	public function test_field_unavailable_without_options()
 	{

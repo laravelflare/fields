@@ -1,6 +1,6 @@
 <?php
 
-class FileFieldTest extends PHPUnit_Framework_TestCase
+class FileFieldTest extends BaseTest
 {
 	public function test_to_come()
 	{
