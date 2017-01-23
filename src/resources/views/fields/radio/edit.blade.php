@@ -30,7 +30,7 @@
                                             ||
                                                 (is_array($oldValue) && in_array($value, $oldValue))
                                             ||
-                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $oldValue = $value->getKey())
+                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $oldValue == $value->getKey())
                                             )
                                             checked="checked" @endif
                                         >

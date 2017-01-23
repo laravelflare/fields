@@ -22,7 +22,7 @@
                         @endif
                     @endif
                 @endforeach
-            @elseif ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue = $value->getKey())
+            @elseif ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue == $value->getKey())
                 {{ $options['options'][$optionValue] }}
             @endif
         @endif
