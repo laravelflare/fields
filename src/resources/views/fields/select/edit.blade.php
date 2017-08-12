@@ -34,6 +34,8 @@
                                                 (is_array($oldValue) && in_array($value, $oldValue))
                                             ||
                                                 ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue == $value->getKey())
+                                            ||
+                                                ($value instanceof \Illuminate\Database\Eloquent\Collection && $value->find($optionValue))
                                             ) selected="selected" @endif
                                     >{{ $option }}</option>
                     @endforeach
