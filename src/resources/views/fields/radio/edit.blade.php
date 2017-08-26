@@ -16,24 +16,26 @@
             
             <div class="col-sm-12">   
                 @if(isset($options['options']) && count($options['options']) > 0)
-                    @foreach ($options['options'] as $value => $option)
+                    @foreach ($options['options'] as $optionValue => $option)
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p>
                                 <input type="radio"
-                                        value="{{ $value }}"
+                                        value="{{ $optionValue }}"
                                         name="{{ $attribute }}"
                                         @if (isset($options['required'])) required="required" @endif
                                         @if (
-                                                (is_scalar($oldValue) && $oldValue == $value)
+                                                (is_scalar($value) && $value == $optionValue)
                                             ||
-                                                (is_array($oldValue) && array_key_exists($value, $oldValue))
+                                                (is_array($value) && array_key_exists($optionValue, $value))
                                             ||
                                                 (is_array($oldValue) && in_array($value, $oldValue))
                                             ||
-                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $oldValue == $value->getKey())
+                                                ($value instanceof \Illuminate\Database\Eloquent\Model && $optionValue == $value->getKey())
                                             ||
                                                 ($value instanceof \Illuminate\Database\Eloquent\Collection && $value->find($optionValue))
                                             ) 
+                                            checked="checked" @endif
+                                        >
                                             checked="checked" @endif
                                         >
                                 {{ $option }}
