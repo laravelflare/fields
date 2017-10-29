@@ -9,5 +9,5 @@ class AutoCompleteField extends BaseField
      *
      * @var string
      */
-    protected $viewpath = 'flare.fields.autocomplete';
+    protected $viewpath = 'flare::fields.autocomplete';
 }
