@@ -69,9 +69,9 @@ class FieldServiceProvider extends ServiceProvider
 
     /**
      * Returns the path to a provided file within the Flare package.
-     * 
+     *
      * @param bool $fiepath
-     * 
+     *
      * @return string
      */
     private function basePath($filepath = false)

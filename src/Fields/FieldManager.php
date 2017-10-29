@@ -8,15 +8,15 @@ use LaravelFlare\Fields\Types\BaseField;
 class FieldManager
 {
     /**
-     * Flare
-     * 
+     * Flare.
+     *
      * @var Flare
      */
     protected $flare;
 
     /**
-     * __construct 
-     * 
+     * __construct.
+     *
      * @param Flare $flare
      */
     public function __construct(Flare $flare)
@@ -26,7 +26,7 @@ class FieldManager
 
     /**
      * Create a new Field Instance.
-     * 
+     *
      * @param string $type
      * @param string $action
      * @param string $attribute
@@ -65,9 +65,9 @@ class FieldManager
 
     /**
      * Determines if a Field type class exists or not.
-     * 
+     *
      * @param string $type
-     * 
+     *
      * @return bool
      */
     public function typeExists($type)
@@ -77,7 +77,7 @@ class FieldManager
 
     /**
      * Returns an array of all of the available Field Types.
-     * 
+     *
      * @return array
      */
     public function availableTypes()
@@ -93,9 +93,9 @@ class FieldManager
 
     /**
      * Resolves the Class of a Field and returns it as a string.
-     * 
+     *
      * @param string $type
-     * 
+     *
      * @return string
      */
     private function resolveField($type)

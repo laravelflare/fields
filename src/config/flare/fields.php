@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Flare Fields
@@ -11,11 +10,12 @@ return [
     | available field types that you have available.
     |
     | You can add your own custom field types here, replace or even remove
-    | some of the defaults. Each type requires a unique key in order to 
+    | some of the defaults. Each type requires a unique key in order to
     | allow you to reference the class in a shorthand fashion.
     |
     */
     'types' => [
+        'autocomplete' => \LaravelFlare\Fields\Types\AutoCompleteField::class,
         'checkbox' => \LaravelFlare\Fields\Types\CheckboxField::class,
         'date' => \LaravelFlare\Fields\Types\DateField::class,
         'datetime' => \LaravelFlare\Fields\Types\DateTimeField::class,
@@ -31,5 +31,4 @@ return [
         'time' => \LaravelFlare\Fields\Types\TimeField::class,
         'wysiwyg' => \LaravelFlare\Fields\Types\WysiwygField::class,
     ],
-
 ];

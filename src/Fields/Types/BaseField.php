@@ -17,42 +17,42 @@ class BaseField
      *     Defaults to flare::fields which outputs
      *     a warning callout notifying the user that the field
      *     view does not yet exist.
-     *     
+     *
      * @var string
      */
     protected $viewpath = 'flare::fields';
 
     /**
      * Field.
-     * 
+     *
      * @var string
      */
     protected $field;
 
     /**
      * Attribute.
-     * 
+     *
      * @var mixed
      */
     protected $attribute;
 
     /**
      * Value.
-     * 
+     *
      * @var mixed
      */
     protected $value;
 
     /**
      * Options.
-     * 
+     *
      * @var mixed
      */
     protected $options;
 
     /**
      * __construct.
-     * 
+     *
      * @param string $field
      * @param string $attribute
      * @param string $value
@@ -68,9 +68,9 @@ class BaseField
 
     /**
      * Returns the Rendered View.
-     * 
+     *
      * @param bool $view
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function render($view = false)
@@ -79,12 +79,12 @@ class BaseField
             return new HtmlString(call_user_func_array([$this, $method], []));
         }
 
-        throw new Exception("Render method `$view` for ".$this->getFieldType()." Field does not exist.");
+        throw new Exception("Render method `$view` for ".$this->getFieldType().' Field does not exist.');
     }
 
     /**
      * Renders the Add (Create) Field View.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function renderAdd()
@@ -94,7 +94,7 @@ class BaseField
 
     /**
      * Renders the Edit (Update) Field View.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function renderEdit()
@@ -104,7 +104,7 @@ class BaseField
 
     /**
      * Renders the Clone (Update) Field View.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function renderClone()
@@ -118,7 +118,7 @@ class BaseField
 
     /**
      * Renders the Viewable Field View.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function renderView()
@@ -128,7 +128,7 @@ class BaseField
 
     /**
      * Getter for Field.
-     * 
+     *
      * @return string
      */
     public function getField()
@@ -138,7 +138,7 @@ class BaseField
 
     /**
      * Getter for Attribute.
-     * 
+     *
      * @return string
      */
     public function getAttribute()
@@ -148,7 +148,7 @@ class BaseField
 
     /**
      * Returns the current value.
-     * 
+     *
      * @return mixed
      */
     public function getValue()
@@ -158,7 +158,7 @@ class BaseField
 
     /**
      * Returns the old or current value.
-     * 
+     *
      * @return mixed
      */
     public function getOldValue()
@@ -176,7 +176,7 @@ class BaseField
 
     /**
      * Accessor for Field Type converted to Title Case.
-     * 
+     *
      * @return string
      */
     public function getFieldType()
@@ -186,7 +186,7 @@ class BaseField
 
     /*
      * Acessor for Field Title converted to Title Case with Spaces.
-     * 
+     *
      * @return string
      */
     public function getAttributeTitle()
