@@ -35,8 +35,6 @@
                                             ) 
                                             checked="checked" @endif
                                         >
-                                            checked="checked" @endif
-                                        >
                                 {{ $option }}
                             </p>
                         </div>
