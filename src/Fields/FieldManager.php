@@ -84,11 +84,21 @@ class FieldManager
     {
         $fields = [];
 
-        foreach ($this->flare->config('fields.types') as $type => $classname) {
+        foreach ($this->config()['types'] as $type => $classname) {
             $fields = array_add($fields, $type, $classname);
         }
 
         return $fields;
+    }
+
+    /**
+     * Return the Fields Config.
+     * 
+     * @return array
+     */
+    public function config()
+    {
+        return $this->flare->config('fields');
     }
 
     /**

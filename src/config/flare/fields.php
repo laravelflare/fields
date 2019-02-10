@@ -31,4 +31,25 @@ return [
         'time' => \LaravelFlare\Fields\Types\TimeField::class,
         'wysiwyg' => \LaravelFlare\Fields\Types\WysiwygField::class,
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Field Options
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for specific Field Types.
+    |
+    */
+    'options' => [
+
+        /**
+         * Map Field Options.
+         *
+         * Google API Key is required for the map field.
+         */
+        'map' => [
+            'google_api_key' => null,
+        ],
+
+    ],
 ];

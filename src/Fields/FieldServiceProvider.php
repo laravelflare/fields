@@ -36,7 +36,9 @@ class FieldServiceProvider extends ServiceProvider
      */
     private function publishAssets()
     {
-        $assets = [];
+        $assets = [
+            'public' => 'public/vendor/flare',
+        ];
 
         foreach ($this->assets as $location => $asset) {
             $assets[$this->basePath($location)] = base_path($asset);
