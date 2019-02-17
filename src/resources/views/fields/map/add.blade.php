@@ -60,4 +60,4 @@
             enableAutocomplete: true
         });
     </script>
-@endsection
+@append
