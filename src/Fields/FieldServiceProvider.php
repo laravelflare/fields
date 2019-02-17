@@ -12,6 +12,7 @@ class FieldServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishConfig();
+        $this->publishAssets();
         $this->publishViews();
     }
 
