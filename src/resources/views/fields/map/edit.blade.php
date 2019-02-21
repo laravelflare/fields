@@ -20,7 +20,7 @@
                     @endif
                     >?</span>
             </label>
-            <input type="text" id="{{ $attribute }}-address" class="form-control {{ $options['class'] ?? null }}" placeholder="Address..." autocomplete="off">
+            <input type="text" id="{{ $attribute }}-address" class="form-control {{ $options['class'] ?? null }}" placeholder="Address..." autocomplete="off" name="{{ $attribute }}[address]">
             <div id="{{ $attribute }}-map" style="width: auto; height: 400px; margin-bottom: 10px; margin-top: 10px;"></div>
             <input type="hidden" name="{{ $attribute }}[latitude]" id="{{ $attribute }}-latitude" value="{{ $oldValue['latitude'] ?? null }}">
             <input type="hidden" name="{{ $attribute }}[longitude]" id="{{ $attribute }}-longitude" value="{{ $oldValue['longitude'] ?? null }}">
