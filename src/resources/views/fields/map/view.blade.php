@@ -32,4 +32,4 @@
             draggable: false,
         });
     </script>
-@endsection
+@append

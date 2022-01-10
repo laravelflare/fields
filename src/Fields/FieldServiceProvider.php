@@ -12,6 +12,7 @@ class FieldServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishConfig();
+        $this->publishAssets();
         $this->publishViews();
     }
 
@@ -40,7 +41,7 @@ class FieldServiceProvider extends ServiceProvider
             'public' => 'public/vendor/flare',
         ];
 
-        foreach ($this->assets as $location => $asset) {
+        foreach ($assets as $location => $asset) {
             $assets[$this->basePath($location)] = base_path($asset);
         }
 
